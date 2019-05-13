@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.1
 import "../buttons"
+import "../fonts"
 import "../variables/fontawesome.js" as FontAwesome
 Item {
     width: parent.width
@@ -77,17 +78,36 @@ Item {
                 ButtonDefault {
                     class_name: "dark outline"
                     text: "Back"
-                    icon: FontAwesome.icons.fa_angle_left
+                    //icon: FontAwesome.icons.fa_angle_left
+                    Text{
+                        text: FontAwesome.icons_solid.fa_angle_left
+                        font.family: Fonts.solid
+                        font.pixelSize: 24
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
                 }
                 ButtonDefault {
                     class_name: "dark outline"
                     text: "Next"
-                    icon: FontAwesome.icons.fa_angle_right
+                    //icon: FontAwesome.icons.fa_angle_right
                     iconRight: true
+                    Text{
+                        text: FontAwesome.icons_solid.fa_angle_right
+                        font.family: Fonts.solid
+                        font.pixelSize: 24
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
                 }
                 ButtonDefault {
                     class_name: "dark outline"
-                    icon: FontAwesome.icons.fa_cog
+                    //icon: FontAwesome.icons.fa_cog
+                    Text{
+                        text: FontAwesome.icons_solid.fa_cog
+                        font.family: Fonts.solid
+                        font.pixelSize: 24
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
             }
         }

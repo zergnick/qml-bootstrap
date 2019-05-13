@@ -3,13 +3,14 @@ import QtQuick.Controls 1.2
 import "src/lists"
 import "src/bars"
 import "src/buttons"
+import "src/fonts"
 import "src/variables/fontawesome.js" as FontAwesome
 
 ApplicationWindow {
     visible: true
     width: 800
     height: 1280
-    FontLoader{ source: "qrc:/src/fonts/fontawesome-webfont.ttf"}
+    //FontLoader{ source: "qrc:/src/fonts/fontawesome-webfont.ttf"}
     Rectangle {
         anchors.fill: parent
     }
@@ -19,7 +20,13 @@ ApplicationWindow {
             ButtonDefault{
                 class_name: "bar dark clear"
                 text: "Back"
-                icon: FontAwesome.icons.fa_angle_left
+                //icon: FontAwesome.icons.fa_angle_left
+                Text{
+                    text: FontAwesome.icons_solid.fa_angle_left
+                    font.family: Fonts.solid
+                    font.pixelSize: 24
+                    anchors.verticalCenter: parent.verticalCenter
+                }
                 opacity: stackView.depth > 1 ? 1 : 0
                 visible: opacity ? true : false
                 Behavior on opacity { NumberAnimation{} }
